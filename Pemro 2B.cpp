@@ -1,25 +1,24 @@
 #include <iostream>
 #include <string>
 using namespace std;
+string color (int now)
+{
+    int lamp = (now - 45) % 103;
+    if (lamp <= 3) 
+        return "Yellow" ;
+    else if (lamp <=83)
+        return "Red" ;
+    else return "Green" ;
 
-int main() {
-    const int green = 15;
-    const int yellow = 8;
-    const int red = 50;
-    const int total = green + yellow + red; // 73 detik per siklus
-
-    int waktu;
-    cout << "Masukkan waktu (detik): ";
-    cin >> waktu;
-
-    // Hitung posisi dalam siklus
-    int t = waktu % total;
-
-    // Tentukan lampu dengan if singkat (maks 3 baris)
-    string lampu = (t < green) ? "Hijau" :
-                   (t < green + yellow) ? "Kuning" : "Merah";
-
-    cout << "Lampu menyala: " << lampu << endl;
+}
+int main ()
+{
+    int detik []= {80,135,150,212};
+    cout << "Hasil dari soal ini : " <<endl;
+    for (int i : detik) {
+        cout << " lamp color :" << color (i) << endl;
+    };
     return 0;
 }
+
 
